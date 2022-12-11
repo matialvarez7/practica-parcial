@@ -185,3 +185,18 @@ describe('Alta de empleados de empleados', function(){
         })
     }) 
 })
+
+describe('Busqueda de empleados', function(){
+    describe('Empleados por parametro', function(){
+        it('Si enviamos ani como parametro trae a Cosme Fulanito', function(done){
+            request(app)
+                .get('/empleados/ani')
+                .expect(200)
+                .end(function(err, res){
+                    assert.equal(res.body[0].nombre, "Cosme")
+                    if (err) done(err)
+                    return done()
+                })
+        })
+    })
+})
