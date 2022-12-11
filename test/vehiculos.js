@@ -1,7 +1,6 @@
-const {assert, expect} = require('chai');
+const {assert} = require('chai');
 const request = require('supertest');
 const app = require('../app');
-const { post } = require('../routes');
 
 describe('Alta de nuevos vehiculos', function(){
     describe('Verifica de datos para el registro', function(){
