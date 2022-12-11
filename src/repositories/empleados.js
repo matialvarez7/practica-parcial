@@ -14,7 +14,8 @@ async function coincidencias(parametro){
     return await Empleado.findAll({
         where:{
             [Op.or]: [{nombre:{[Op.substring]:parametro}},{apellido:{[Op.substring]:parametro}}, {dni:{[Op.substring]:parametro}}]
-        }
+        },
+        attributes: ['nombre', 'apellido', 'dni', 'ingresoNomina']
     })
 }
 
